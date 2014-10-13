@@ -2,6 +2,8 @@ library(accDegTest)
 library(shinyBS)
 library(shiny)
 
+data(SE_data, package = "accDegTest")
+
 server = function(input, output, session) {
   
   rct_df = reactiveValues(df = SE_data) 
