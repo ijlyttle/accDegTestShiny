@@ -4,9 +4,13 @@ This repository is for a shiny app to demonstrate the capabilities of the accDeg
 
 ## Installation
 
-```
+```R
+install.packages("shiny")
+
 # if devtools not installed:
 # install.packages("devtools")
+devtools::install_github("ebailey78/shinyBS")
+devtools::install_github("rcqls/accDegTest")
 devtools::install_github("ijlyttle/accDegTestShiny")
 ```
 
