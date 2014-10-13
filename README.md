@@ -16,7 +16,7 @@ devtools::install_github("ijlyttle/accDegTestShiny")
 
 ## Authors
 
-* Remy Drouilhet
+* Rémy Drouilhet
 * Alex Shum
 * Ian Lyttle
 
