@@ -25,7 +25,7 @@ server = function(input, output, session) {
   })
   
   
-  output$plot = renderPlot({
+  output$plot = renderPlot(height=700,{
     input$model
     input$plot_type
     
