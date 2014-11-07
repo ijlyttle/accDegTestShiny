@@ -10,7 +10,7 @@ fluidPage(
         #control elements
         fileInput('file', 'Upload CSV', accept = c("text/csv", "text/comma-separated-values", 
                                                    "text/plain", ".csv")),
-        selectInput("D_var", label = "Degredation", choices = ""),
+        selectInput("D_var", label = "Degradation", choices = ""),
         selectInput("t_var", label = "Time", choices = ""),
         selectInput("temp", label = "Temperature", choices =""),
         selectInput("humid", label = "Rel. Humidity", choices = ""),
