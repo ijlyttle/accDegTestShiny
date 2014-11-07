@@ -27,6 +27,7 @@ server = function(input, output, session) {
   
   output$plot = renderPlot({
     input$model
+    input$plot_type
     
     isolate({
       D = input$D_var
@@ -36,7 +37,7 @@ server = function(input, output, session) {
       formula_string = paste0(D, " ~ ", t, " | ", "11605/", TK, " & ", "-log(", RH, ")")
       if(input$model > 0) {
         m = addt(formula(formula_string), xref = c(input$xref1, input$xref2), data = rct_df$df)
-        p = plot(m)
+        p = plot(m,input$plot_type)
       } else {
         p = NULL
       }

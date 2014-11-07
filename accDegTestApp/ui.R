@@ -19,7 +19,13 @@ fluidPage(
         
         #todo xref
         
-        actionButton("model", label = "Fit Model")
+        actionButton("model", label = "Fit Model"),
+        br(),br(),
+        selectInput("plot_type", label = "Plot type", 
+          choices = c("all degradations", "degradation", "g-degradation", "interval stress plot", "time resid", "stress resid", "normal", "resid", "points clouds"),
+          selected="all degradations"
+        )
+
       )
     ),
     
