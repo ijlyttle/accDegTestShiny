@@ -18,10 +18,10 @@ server = function(input, output, session) {
   observe({
     # populates the device input
     choice_list = rct_update_choices()
-    updateSelectInput(session, inputId = "D_var", choices = choice_list, NULL)
-    updateSelectInput(session, inputId = "t_var", choices = choice_list, NULL)
-    updateSelectInput(session, inputId = "temp", choices = choice_list, NULL)
-    updateSelectInput(session, inputId = "humid", choices = choice_list, NULL)
+    updateSelectInput(session, inputId = "D_var", choices = choice_list, selected= choice_list[1])
+    updateSelectInput(session, inputId = "t_var", choices = choice_list, selected= choice_list[2])
+    updateSelectInput(session, inputId = "temp", choices = choice_list, selected= choice_list[3])
+    updateSelectInput(session, inputId = "humid", choices = choice_list, selected= choice_list[4])
   })
   
   
