@@ -18,12 +18,17 @@ fluidPage(
         numericInput("xref2", "Ref2", value = 75),
         
         #todo xref
-        
+        br(),
         actionButton("model", label = "Fit Model"),
         br(),br(),
         selectInput("plot_type", label = "Plot type", 
           choices = c("all degradations", "degradation", "g-degradation", "interval stress plot", "time resid", "stress resid", "normal", "resid", "points clouds"),
           selected="all degradations"
+        ),
+        br(),br(),
+        selectInput("model_type", label = "Model type", 
+          choices = c("Peck model", "Arrhenius (extended) model"),
+          selected="Peck model"
         )
 
       )

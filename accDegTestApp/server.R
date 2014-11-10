@@ -28,13 +28,19 @@ server = function(input, output, session) {
   output$plot = renderPlot(height=700,{
     input$model
     input$plot_type
+    input$model_type
     
     isolate({
       D = input$D_var
       t = input$t_var
       TK = input$temp
       RH = input$humid
-      formula_string = paste0(D, " ~ ", t, " | ", "11605/", TK, " & ", "-log(", RH, ")")
+      formula_string = switch(input$model_type,
+        "Peck model"=
+          paste0(D, " ~ ", t, " | ", "11605/", TK, " & ", "-log(", RH, ")"),
+        "Arrhenius (extended) model"=
+          paste0(D, " ~ ", t, " | ", "11605/",TK, " & ", "-log(", RH, ") & -11605/",TK,"*log(",RH,")")
+      )
       if(input$model > 0) {
         m = addt(formula(formula_string), xref = c(input$xref1, input$xref2), data = rct_df$df)
         p = plot(m,input$plot_type)
